@@ -1,3 +1,9 @@
 # Reading Response to Founders.biz
 
-The purpose of the game is to be in a chair of CEO of a tech company. It does not show any details 
+The purpose of the game is to be in a chair of CEO of a tech company. Your goal is to grow your company from a small office in your appartment that focuses on products only in US, to a huge campus that has a worldwide impact and distribution of products. 
+
+I played it the game 4 times. It was hard and I failed, the board kicked me out of being a CEO of Happy Corp. The reason I got fired was my incompetence to sales and only focus on engineering part of a running a business. The second time I got into -60,000,000$ in sales due to lack of marketing and development of my team. I couldn't handle the pressure of server attacks and couldn't win any law cases against trolls which cost me a lot. Third and fourth times I became a successful CEO with worldwide acception and big campus, who acquired multiple companies at the end. 
+
+The game showed me that there is more to being a CEO of a tech company besides focusing on delivering the best product. It gave me a glimpse of marketing, design, and competing on a market with other products. It is intresting and challenging to juggle all and try to manage and excel in all aspects of running a business. the game taught me to look at design part and marketing part. Also hiring the right people with right qualities for the amount of money you can afford is another part of a game. Part of my failures was my team, they were either underqualified but got paid a lot, which gave me a lot of expenses, or they were underpaid and refused to work with me which left me with a bad team. 
+
+I think Founders.biz is an educated and interactive way to show people what it is like to be in a shoes of Steve Jobs and Bill Gates. It showed the diversity of a tech world no matter how big your team is and how profitable is your product. It could be a team of 2000 people of a team of 1 person. Also, your product might be known worldwide or a student project. It is important to look at every aspect of tech production. I think that is why the game was craeted.
