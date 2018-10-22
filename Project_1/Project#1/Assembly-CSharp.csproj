@@ -63,19 +63,20 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\ChangeBckrd.cs" />
     <Compile Include="Assets\Scripts\ControlSprite.cs" />
+    <Compile Include="Assets\Scripts\FrameCatcher.cs" />
     <Compile Include="Assets\Scripts\NOTES.cs" />
     <Compile Include="Assets\Scripts\QuitHandling.cs" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>C:/Users/ligay/Desktop/COLLEGE/MTEC 2120  - Media Design/HW/Project#1/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/ligay/Desktop/COLLEGE/MTEC 2120  - Media Design/Project_1/Project#1/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/ligay/Desktop/COLLEGE/MTEC 2120  - Media Design/HW/Project#1/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/ligay/Desktop/COLLEGE/MTEC 2120  - Media Design/Project_1/Project#1/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/ligay/Desktop/COLLEGE/MTEC 2120  - Media Design/HW/Project#1/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/ligay/Desktop/COLLEGE/MTEC 2120  - Media Design/Project_1/Project#1/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/ligay/Desktop/COLLEGE/MTEC 2120  - Media Design/HW/Project#1/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/ligay/Desktop/COLLEGE/MTEC 2120  - Media Design/Project_1/Project#1/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

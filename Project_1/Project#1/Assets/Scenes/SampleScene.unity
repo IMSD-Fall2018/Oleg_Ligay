@@ -267,6 +267,7 @@ GameObject:
   - component: {fileID: 918513614}
   - component: {fileID: 918513613}
   - component: {fileID: 918513612}
+  - component: {fileID: 918513616}
   m_Layer: 0
   m_Name: season
   m_TagString: Untagged
@@ -359,6 +360,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &918513616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 918513611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8db6ad1812cee0b45b1409c20c598a3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  folderName: Screenshots
+  frameRate: 30
 --- !u!1 &1824123467
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,6 +382,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1824123469}
   - component: {fileID: 1824123468}
+  - component: {fileID: 1824123471}
+  - component: {fileID: 1824123470}
   m_Layer: 0
   m_Name: mickey
   m_TagString: Untagged
@@ -434,3 +450,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1824123470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1824123467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae987f524ee6c9340b76e3a1d8826177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationVector: {x: 0, y: 150, z: 0}
+--- !u!114 &1824123471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1824123467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8db6ad1812cee0b45b1409c20c598a3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  folderName: Screenshots
+  frameRate: 30
