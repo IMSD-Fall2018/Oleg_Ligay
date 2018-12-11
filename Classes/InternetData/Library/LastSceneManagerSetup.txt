@@ -1,0 +1,4 @@
+sceneSetups:
+- path: C:/Users/ligay/Desktop/COLLEGE/MTEC 2120  - Media Design/Final Project/Assets/Scenes/SampleScene.unity
+  isLoaded: 1
+  isActive: 1
