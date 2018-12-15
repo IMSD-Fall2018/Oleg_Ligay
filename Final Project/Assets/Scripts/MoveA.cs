@@ -16,14 +16,10 @@ public class MoveA : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         posA.transform.position = new Vector3(getDataScript.locA_x, getDataScript.locA_y, 0f);
-        Debug.Log(getDataScript.locA_x +" " +getDataScript.locA_y);
+       //Debug.Log(getDataScript.locA_x +" " +getDataScript.locA_y);
 
-        randomLatittude();
+    
 	}
 
-    void randomLatittude()
-    {
-        float ranNum= Random.Range( -74.221332f, -73.684744f);
-        Debug.Log(ranNum);
-    }
+
 }

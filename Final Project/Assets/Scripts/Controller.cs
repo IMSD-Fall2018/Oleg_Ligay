@@ -10,7 +10,7 @@ public class Controller : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        DataOutput();
+        //DataOutput();
 	}
 	
 	// Update is called once per frame
