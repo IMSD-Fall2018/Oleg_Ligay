@@ -16,6 +16,9 @@ public class GetData : MonoBehaviour {
     float x, y, xEnd, yEnd;
     public GameObject sprite;
     public GameObject endsprite;
+    private LineRenderer lineRenderer;
+    float counter;
+
 
     void Start() {
         isrunning = true;
@@ -30,6 +33,7 @@ public class GetData : MonoBehaviour {
     {
         while (isrunning)
         {
+            yield return new WaitForSeconds(3f);
             //string url = "https://maps.googleapis.com/maps/api/directions/json?destination=40.695574,-73.987947&origin=40.820133,-74.221332&key=AIzaSyBh4yugP-Ux5iHxw4vfK7X6a2a7L4l4lCk&mode=driving";
             string url = "https://maps.googleapis.com/maps/api/directions/json?destination=40.695574,-73.987947&key=AIzaSyBh4yugP-Ux5iHxw4vfK7X6a2a7L4l4lCk&mode=driving";
             string ranLong = randomLongtitude();
@@ -53,7 +57,7 @@ public class GetData : MonoBehaviour {
 
             //Steps
             JSONObject steps = tempData["routes"][0]["legs"][0]["steps"];
-
+            
             //Location A - origin
             float locA_coordinates_lat = tempData["routes"][0]["legs"][0]["start_location"]["lat"].n;
             float locA_coordinates_long = tempData["routes"][0]["legs"][0]["start_location"]["lng"].n;
@@ -100,18 +104,24 @@ public class GetData : MonoBehaviour {
 
                 endLat = end["lat"].n;
                 yEnd = Remap(endLat, (float)40.582672, (float)40.820133, (float)22, (float)218);
+                
                 endLong = end["lng"].n;
                 xEnd = Remap(endLong, (float)-74.221332, (float)-73.684744, (float)47, (float)425);
 
                 sprite.transform.position = new Vector3(x, y);
+                
                 yield return new WaitForSeconds(.2f);
                 endsprite.transform.position = new Vector3(xEnd, yEnd);
                 yield return new WaitForSeconds(.2f);
+                //draw(sprite, endsprite);
 
             }
 
 
-            yield return new WaitForSeconds(5f);
+            //yield return new WaitForSeconds(3f);
+            //ranLong = randomLongtitude();
+            //ranLat = randomLatittude();
+            yield return new WaitForSeconds(3f);
         }
 
         //set position to object position B
@@ -137,6 +147,32 @@ public class GetData : MonoBehaviour {
 
         string ranLong = Random.Range(40.582672f, 40.820133f).ToString();
         return ranLong;
+      
+    }
+
+
+    void draw(GameObject  origin, GameObject destination)
+    {
+        lineRenderer = GetComponent<LineRenderer>();
+        lineRenderer.SetPosition(0, origin.transform.position);
+        lineRenderer.startWidth = 2f;
+        lineRenderer.endWidth = 2f;
+
+        float dist = Vector3.Distance(origin.transform.position, destination.transform.position);
+        //float counter;
+        if (counter < dist)
+        {
+            counter += .1f; //Line Draw Speed
+            float x = Mathf.Lerp(0, dist, counter);
+
+            Vector3 pointA = origin.transform.position;
+            Vector3 pointB = destination.transform.position;
+
+            //Get the unit vector in the desired direction, multuply by the desired length and add the starting point
+            Vector3 pointAlongLine = x * Vector3.Normalize(pointB - pointA) + pointA;
+
+            lineRenderer.SetPosition(1, pointAlongLine);
+        }
       
     }
 }

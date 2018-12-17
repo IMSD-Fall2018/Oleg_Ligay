@@ -14,18 +14,24 @@ public class DrawLine : MonoBehaviour {
     public float drawSpeed = 6f;
 
 	// Use this for initialization
-	void Start () {
+	//void Start () {
+ //       lineRenderer = GetComponent<LineRenderer>();
+ //       lineRenderer.SetPosition(0, origin.position);
+ //       lineRenderer.startWidth = 2f;
+ //       lineRenderer.endWidth = 2f;
+
+ //       dist = Vector3.Distance(origin.position, destination.position);
+	//}
+	
+	// Update is called once per frame
+	void draw () {
         lineRenderer = GetComponent<LineRenderer>();
         lineRenderer.SetPosition(0, origin.position);
         lineRenderer.startWidth = 2f;
         lineRenderer.endWidth = 2f;
 
         dist = Vector3.Distance(origin.position, destination.position);
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		if(counter < dist)
+        if (counter < dist)
         {
             counter += .1f; //Line Draw Speed
             float x = Mathf.Lerp(0, dist, counter);
