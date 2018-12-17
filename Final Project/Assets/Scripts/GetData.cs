@@ -13,6 +13,10 @@ public class GetData : MonoBehaviour {
     public float locA_y;
     public float locB_y;
     public string stepByStep;
+    float x, y, xEnd, yEnd;
+    public GameObject sprite;
+    public GameObject endsprite;
+
     void Start() {
         isrunning = true;
         StartCoroutine("StartOld");
@@ -46,6 +50,10 @@ public class GetData : MonoBehaviour {
             // this particular API stores all the data under the header
             // "geocodedWaypoints" so first get in there
             JSONObject geocodedWaypoints = tempData["geocoded_waypoints"];
+
+            //Steps
+            JSONObject steps = tempData["routes"][0]["legs"][0]["steps"];
+
             //Location A - origin
             float locA_coordinates_lat = tempData["routes"][0]["legs"][0]["start_location"]["lat"].n;
             float locA_coordinates_long = tempData["routes"][0]["legs"][0]["start_location"]["lng"].n;
@@ -53,18 +61,55 @@ public class GetData : MonoBehaviour {
             //Location B - destination
             float locB_coordinates_lat = tempData["routes"][0]["legs"][0]["end_location"]["lat"].n;
             float locB_coordinates_long = tempData["routes"][0]["legs"][0]["end_location"]["lng"].n;
-            string steps = tempData["routes"][0]["legs"][0]["steps"][0].str;
-            Debug.Log(steps);
-           
+
+            //Start Location
+            JSONObject start = tempData["routes"][0]["legs"][0]["steps"][0]["start_location"];
+            float startLat = start["lat"].n;
+            float startLong = start["lng"].n;
+
+            //End location
+            JSONObject end = tempData["routes"][0]["legs"][0]["steps"][0]["end_location"];
+            float endLat = end["lat"].n;
+            float endLong = end["lng"].n;
+
             // log it just to see whats up
-       
+
             //Remapped values latts and logs
-             locA_x = Remap(locA_coordinates_long, (float)-74.221332, (float)-73.684744, (float)47, (float)425);
+            locA_x = Remap(locA_coordinates_long, (float)-74.221332, (float)-73.684744, (float)47, (float)425);
              locB_x = Remap(locB_coordinates_long, (float)-74.221332, (float)-73.684744, (float)47, (float)425);
              locA_y = Remap(locA_coordinates_lat, (float)40.582672, (float)40.820133, (float)22, (float)218);
              locB_y = Remap(locB_coordinates_lat, (float)40.582672, (float)40.820133, (float)22, (float)218);
             //float remapped_locA_longitude = Remap()
-          
+
+            for (int i = 0; i < steps.Count; i++)
+            {
+                start = steps[i]["start_location"];
+                end = steps[i]["end_location"];
+
+                startLat = start["lat"].n;
+                x = Remap(startLong, (float)-74.221332, (float)-73.684744, (float)47, (float)425);
+                startLong = start["lng"].n;
+                y = Remap(startLat, (float)40.582672, (float)40.820133, (float)22, (float)218);
+
+                //locA_x = Remap(locA_coordinates_long, (float)-74.221332, (float)-73.684744, (float)47, (float)425);
+                //locB_x = Remap(locB_coordinates_long, (float)-74.221332, (float)-73.684744, (float)47, (float)425);
+                //locA_y = Remap(locA_coordinates_lat, (float)40.582672, (float)40.820133, (float)22, (float)218);
+                //locB_y = Remap(locB_coordinates_lat, (float)40.582672, (float)40.820133, (float)22, (float)218);
+                Debug.Log(x + ", " + y);
+
+
+                endLat = end["lat"].n;
+                yEnd = Remap(endLat, (float)40.582672, (float)40.820133, (float)22, (float)218);
+                endLong = end["lng"].n;
+                xEnd = Remap(endLong, (float)-74.221332, (float)-73.684744, (float)47, (float)425);
+
+                sprite.transform.position = new Vector3(x, y);
+                yield return new WaitForSeconds(.2f);
+                endsprite.transform.position = new Vector3(xEnd, yEnd);
+                yield return new WaitForSeconds(.2f);
+
+            }
+
 
             yield return new WaitForSeconds(5f);
         }
